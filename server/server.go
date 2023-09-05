@@ -1,6 +1,8 @@
 package main
 
-import "Ceds/log"
+import (
+	"Ceds/tcp"
+)
 
 var banner = `
    ______          ____           ___     
@@ -12,7 +14,5 @@ var banner = `
 
 func main() {
 	println(banner)
-
-	log.Log.Info("Starting server", "")
-	//tcp.ListenAndServe()
+	tcp.ListenAndServe()
 }
