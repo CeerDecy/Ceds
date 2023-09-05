@@ -10,6 +10,7 @@ import (
 	"Ceds/conf"
 )
 
+// ListenAndServe 监听并启动服务
 func ListenAndServe() {
 	listen, err := net.Listen("tcp", fmt.Sprintf("%s:%d", conf.Config.Host(), conf.Config.Port()))
 	if err != nil {
@@ -26,6 +27,7 @@ func ListenAndServe() {
 	}
 }
 
+// handle 处理客户端请求
 func handle(conn net.Conn) {
 	reader := bufio.NewReader(conn)
 	for {
